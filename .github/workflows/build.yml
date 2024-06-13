@@ -22,23 +22,28 @@ jobs:
           terraform_version: 1.3.0  # Specify the desired Terraform version
 
       - name: Terraform Format
+        working-directory: ./helm
         id: fmt
         run: terraform fmt -check -recursive
         continue-on-error: true
 
       - name: Terraform Init
+        working-directory: ./helm
         id: init
         run: terraform init
 
       - name: Terraform Validate
+        working-directory: ./helm
         id: validate
         run: terraform validate
 
       - name: Terraform Plan
+        working-directory: ./helm
         id: plan
         run: terraform plan
 
       - name: Terraform Apply
+        working-directory: ./helm
         id: apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply -auto-approve
