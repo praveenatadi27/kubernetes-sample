@@ -75,7 +75,7 @@ provider "helm" {
 
 # Helm values file templating
 data "template_file" "helm_values" {
-  template = file("${path.module}/helm_values.yaml")
+  template = file("${path.module}/helm/helm_values.yaml")
   # Parameters you want to pass into the helm_values.yaml.tpl file to be templated
   vars = {
     fullnameOverride = "${var.namespace}"
