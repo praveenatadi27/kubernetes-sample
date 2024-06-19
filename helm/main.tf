@@ -31,7 +31,7 @@ terraform {
     organization = "praveena-tadi-org"
 
     workspaces {
-      name = "kubernetes-ops-${local.environment_name}-20-eks"
+      name = "kubernetes-ops-staging-20-eks"
     }
   }
  
