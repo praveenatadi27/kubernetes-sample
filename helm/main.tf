@@ -55,6 +55,11 @@ data "terraform_remote_state" "eks" {
     }
   }
 }
+resource "aws_s3_bucket" "example" {
+  bucket = "example-bucket-${terraform.workspace}"
+  acl    = "private"
+}
+
 
 data "terraform_remote_state" "route53_hosted_zone" {
   backend = "remote"
@@ -66,6 +71,11 @@ data "terraform_remote_state" "route53_hosted_zone" {
     }
   }
 }
+resource "aws_s3_bucket" "example" {
+  bucket = "example-bucket-${terraform.workspace}"
+  acl    = "private"
+}
+
 
 provider "helm" {
   kubernetes {
