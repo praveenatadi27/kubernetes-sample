@@ -51,7 +51,7 @@ data "terraform_remote_state" "eks" {
     # Update to your Terraform Cloud organization
     organization = "praveena-tadi-org"
     workspaces = {
-      name = "kubernetes-ops-${local.environment_name}-20-eks"
+      name = "kubernetes-ops-staging-20-eks"
     }
   }
 }
@@ -62,7 +62,7 @@ data "terraform_remote_state" "route53_hosted_zone" {
     # Update to your Terraform Cloud organization
     organization = "praveena-tadi-org"
     workspaces = {
-      name = "kubernetes-ops-${local.environment_name}-5-route53-hostedzone"
+      name = "kubernetes-ops-staging-5-route53-hostedzone"
     }
   }
 }
