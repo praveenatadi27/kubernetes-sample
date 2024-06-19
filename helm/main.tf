@@ -34,14 +34,7 @@ terraform {
       name = "kubernetes-ops-${local.environment_name}-20-eks"
     }
   }
- backend "remote" {
-    # Update to your Terraform Cloud organization
-    organization = "praveena-tadi-org"
-
-    workspaces {
-      name = "kubernetes-ops-${local.environment_name}-5-route53-hostedzone"
-    }
-  }
+ 
 }
 
 provider "aws" {
