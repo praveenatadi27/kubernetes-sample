@@ -28,7 +28,7 @@ terraform {
 
   backend "remote" {
     # Update to your Terraform Cloud organization
-    organization = "praveena-tadi-org"
+    organization = "praveena-tadi-org1"
 
     workspaces {
       name = "kubernetes-ops-staging-20-eks"
