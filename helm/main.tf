@@ -26,23 +26,17 @@ terraform {
   }
 
 
-  backend "s3" {
-    bucket         = "my-terraform-bucket"
-    key            = "path/to/my/terraform.tfstate"
-    region         = "us-west-2"
-    dynamodb_table = "my-lock-table"
-  }
 
 
 
- /* backend "remote" {
+  backend "remote" {
     # Update to your Terraform Cloud organization
     organization = "praveena-tadi-org"
 
     workspaces {
       name = "kubernetes-ops-staging-20-eks"
     }
-  } */
+  } 
 }
 
 provider "aws" {
