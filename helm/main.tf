@@ -71,6 +71,8 @@ resource "aws_s3_bucket" "example" {
   acl    = "private"
 }
 
+backend "s3" {}
+
 
 provider "helm" {
   kubernetes {
