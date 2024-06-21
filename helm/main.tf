@@ -34,6 +34,8 @@ terraform {
       name = "kubernetes-ops-staging-20-eks"
     }
   }
+
+ backend "s3" {}
  
 }
 
@@ -70,9 +72,6 @@ resource "aws_s3_bucket" "example" {
   bucket = "example-bucket-${terraform.workspace}"
   acl    = "private"
 }
-
-backend "s3" {}
-
 
 provider "helm" {
   kubernetes {
