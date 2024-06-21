@@ -50,7 +50,6 @@ data "terraform_remote_state" "eks" {
   config = {
     # Update to your Terraform Cloud organization
     organization = "praveena-tadi-org"
-    key = "env://${local.workspace}/networking/terraform.tfstate"
     workspaces = {
       name = "kubernetes-ops-staging-20-eks"
     }
@@ -62,7 +61,6 @@ data "terraform_remote_state" "route53_hosted_zone" {
   config = {
     # Update to your Terraform Cloud organization
     organization = "praveena-tadi-org"
-    key = "env://${local.workspace}/networking/terraform.tfstate"
     workspaces = {
       name = "kubernetes-ops-staging-5-route53-hostedzone"
     }
