@@ -34,6 +34,7 @@ terraform {
       name = "kubernetes-ops-staging-20-eks"
     }
   }
+}
 
 provider "aws" {
   region = local.aws_region
