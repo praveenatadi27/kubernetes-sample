@@ -28,13 +28,8 @@ terraform {
 
 
 
-  backend "s3" {
-    bucket = "example-bucket-${terraform.workspace}"
-    acl    = "private"
-    key    = "path/to/your/terraform.tfstate"
-    region = local.aws_region
-    dynamodb_table = "your-dynamodb-table-name"
-    encrypt        = true
+
+  backend "remote" {
     # Update to your Terraform Cloud organization
     organization = "praveena-tadi-org"
 
@@ -56,7 +51,7 @@ data "terraform_remote_state" "eks" {
   backend = "remote"
   config = {
     # Update to your Terraform Cloud organization
-    organization = "praveena-tadi-org"
+    organization = "praveena-tadi-org1"
     workspaces = {
       name = "kubernetes-ops-staging-20-eks"
     }
@@ -73,7 +68,10 @@ data "terraform_remote_state" "route53_hosted_zone" {
     }
   }
 }
-
+resource "aws_s3_bucket" "example" {
+  bucket = "example-bucket-${terraform.workspace}"
+  acl    = "private"
+}
 
 provider "helm" {
   kubernetes {
