@@ -47,27 +47,7 @@ output "module_path" {
   value = path.module
 }
 
-data "terraform_remote_state" "eks" {
-  backend = "remote"
-  config = {
-    # Update to your Terraform Cloud organization
-    organization = "praveena-tadi-org"
-    workspaces = {
-      name = "kubernetes-ops-staging-20-eks"
-    }
-  }
-}
 
-data "terraform_remote_state" "route53_hosted_zone" {
-  backend = "remote"
-  config = {
-    # Update to your Terraform Cloud organization
-    organization = "praveena-tadi-org"
-    workspaces = {
-      name = "kubernetes-ops-staging-5-route53-hostedzone"
-    }
-  }
-}
 resource "aws_s3_bucket" "example" {
   bucket = "example-bucket-${terraform.workspace}"
   acl    = "private"
