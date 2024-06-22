@@ -51,7 +51,7 @@ data "terraform_remote_state" "eks" {
   backend = "remote"
   config = {
     # Update to your Terraform Cloud organization
-    organization = "praveena-tadi-org1"
+    organization = "praveena-tadi-org"
     workspaces = {
       name = "kubernetes-ops-staging-20-eks"
     }
