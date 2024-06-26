@@ -44,7 +44,7 @@ jobs:
       - name: Terraform Plan
         working-directory: ./helm
         id: plan
-        run: terraform plan -refresh=false -state=./dummy.tfstate
+        run: terraform plan
 
       - name: Terraform Apply
         working-directory: ./helm
