@@ -25,18 +25,13 @@ terraform {
     }
   }
 
-
-
-
-
-  backend "remote" {
-    # Update to your Terraform Cloud organization
+  cloud {
     organization = "praveena-tadi-org"
 
     workspaces {
       name = "kubernetes-ops-staging-20-eks"
     }
-  } 
+  }
 }
 
 provider "aws" {
