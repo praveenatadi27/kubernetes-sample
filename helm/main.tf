@@ -34,10 +34,6 @@ terraform {
   }
 }
 
-output "workspace_names" {
-  value = data.tfe_workspaces.all.names
-}
-
 provider "aws" {
   region = local.aws_region
 }
