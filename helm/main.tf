@@ -34,19 +34,6 @@ terraform {
   }
 }
 
-provider "tfe" {
-  hostname = "app.terraform.io"
-  token    = var.tfe_token
-}
-
-data "tfe_organization" "org" {
-  name = "your-org-name"
-}
-
-data "tfe_workspaces" "all" {
-  organization = data.tfe_organization.org.id
-}
-
 output "workspace_names" {
   value = data.tfe_workspaces.all.names
 }
