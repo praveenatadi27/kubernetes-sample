@@ -26,10 +26,6 @@ jobs:
         id: fmt
         run: terraform fmt -check -recursive
         continue-on-error: true
-
-      - name: Set up Terraform Cloud credentials 
-        run: | 
-           echo '{"credentials": {"app.terraform.io": {"token": "${{ secrets.TERRAFORM_CLOUD_TOKEN }}"}}}' > ~/.terraform.d/credentials.tfrc.json
         
       - name: Terraform Init
         working-directory: ./helm
