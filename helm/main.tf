@@ -34,6 +34,18 @@ terraform {
   }
 }
 
+data "tfe_organization" "org" {
+  name = "your-org-name"
+}
+
+data "tfe_workspaces" "all" {
+  organization = data.tfe_organization.org.id
+}
+
+output "workspace_names" {
+  value = data.tfe_workspaces.all.names
+}
+
 provider "aws" {
   region = local.aws_region
 }
