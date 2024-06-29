@@ -38,7 +38,7 @@ jobs:
 
       - name: Terraform workspace list
         working-directory: ./helm
-        id: terraform workspace list
+        id: terraformworkspacelist
         run: terraform workspace list
 
       - name: Terraform Validate
