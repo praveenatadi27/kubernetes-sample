@@ -36,6 +36,11 @@ jobs:
         id: init
         run: terraform init
 
+      - name: Terraform workspace list
+        working-directory: ./helm
+        id: terraform workspace list
+        run: terraform workspace list
+
       - name: Terraform Validate
         working-directory: ./helm
         id: validate
