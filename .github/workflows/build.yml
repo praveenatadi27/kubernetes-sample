@@ -41,6 +41,11 @@ jobs:
         id: terraformworkspacelist
         run: terraform workspace list
 
+      - name: terraform workspace select <workspace-name>
+        working-directory: ./helm
+        id: terraformselectworkspace
+        run: terraform workspace select kubernetes-ops-staging-20-eks
+
       - name: Terraform Validate
         working-directory: ./helm
         id: validate
