@@ -60,7 +60,7 @@ resource "aws_s3_bucket" "example" {
 
 provider "helm" {
   kubernetes {
-    host                   = data.terraform_remote_state.eks.outputs.cluster_endpoint
+    host                  = data.terraform_remote_state.eks.outputs.cluster_endpoint
     cluster_ca_certificate = base64decode(data.terraform_remote_state.eks.outputs.cluster_certificate_authority_data)
     exec {
       api_version = "client.authentication.k8s.io/v1alpha1"
