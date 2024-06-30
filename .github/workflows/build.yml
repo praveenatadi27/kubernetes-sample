@@ -64,7 +64,7 @@ jobs:
       - name: Terraform Apply
         working-directory: ./helm
         id: apply
-        run: terraform apply
+        run: terraform apply -auto-approve
 
       - name: Post Plan Comment
         if: github.event_name == 'pull_request'
