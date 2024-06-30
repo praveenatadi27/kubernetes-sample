@@ -30,7 +30,12 @@ jobs:
       - name: Set up Terraform Cloud credentials 
         run: | 
            echo '{"credentials": {"app.terraform.io": {"token": "${{ secrets.TERRAFORM_CLOUD_TOKEN }}"}}}' > ~/.terraform.d/credentials.tfrc.json
-
+      
+      - name: Terraform Init
+        working-directory: ./helm
+        id: init
+        run: terraform init
+        
       - name: Terraform workspace list
         working-directory: ./helm
         id: terraformworkspacelist
