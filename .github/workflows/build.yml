@@ -44,7 +44,7 @@ jobs:
       - name: Terraform Init
         working-directory: ./helm
         id: initworkspace
-        run: terraform init -backend=false  
+        run: terraform init
 
       - name: Terraform Validate
         working-directory: ./helm
